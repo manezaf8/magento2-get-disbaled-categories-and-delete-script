@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package   F8_categorycleanup
+ * @author    Ntabethemba Ntshoza
+ * @copyright Copyright (c) 2023 F8
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job name="F8_categorycleanup" instance="F8\CategoryCleanup\Cron\Cleanup" method="execute">
+            <schedule>0 22 * * *</schedule>
+        </job>
+    </group>
+</config>

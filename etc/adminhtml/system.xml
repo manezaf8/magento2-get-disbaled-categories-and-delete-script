@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @package   F8_categorycleanup
+ * @author    Ntabethemba Ntshoza
+ * @copyright Copyright (c) 2023 F8
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="f8storeconfig" translate="label" sortOrder="100">
+            <label>My Config</label>
+        </tab>
+        <section id="categorycleanup" translate="label" sortOrder="120" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Category Cleanup</label>
+            <tab>f8storeconfig</tab>
+            <resource>F8_CategoryCleanup::f8storeconfig</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Settings</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Delete Disabled Categories</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>Enable to automatically delete disabled categories</comment>
+                </field>
+            </group>
+            <group id="categorycleanup_categories" translate="label" type="textarea" sortOrder="160" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Categories to delete</label>
+                <field id="category_ids" translate="label" type="text" sortOrder="5" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Category Ids to be deleted</label>
+                    <tooltip>Comma separated list of Product attributes</tooltip>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
+
